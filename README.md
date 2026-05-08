@@ -1,3 +1,3 @@
 # AWG-MultiChannel-RFSoC
 
-![Alt text](./asset/arb_RFSoC_input.png)
+![Alt text](./assets/arb_RFSoC_input.png)
