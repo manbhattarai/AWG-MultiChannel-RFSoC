@@ -1,6 +1,6 @@
 # AWG-MultiChannel-RFSoC
 
 <div style="display:flex; gap:24px;">
-  <img src="./assets/arb_RFSoC_input_bkg.png" style="width:55%;" alt="Input">
-  <img src="./assets/arb_RFSoC_output_bkg.png" style="width:55%;" alt="Output">
+  <img src="./assets/arb_RFSoC_input_bkg.png" style="width:50%;" alt="Input">
+  <img src="./assets/arb_RFSoC_output_bkg.png" style="width:50%;" alt="Output">
 </div>
