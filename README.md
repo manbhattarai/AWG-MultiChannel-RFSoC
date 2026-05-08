@@ -1,3 +1,3 @@
 # AWG-MultiChannel-RFSoC
 
-![Alt text](./asset/PhotonCounter_RP_TOF.jpg)
+![Alt text](./asset/arb_RFSoC_input.png)
