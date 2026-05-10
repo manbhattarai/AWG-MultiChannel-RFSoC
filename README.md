@@ -1,10 +1,15 @@
 # AWG-MultiChannel-RFSoC
 
+[![Platform](https://img.shields.io/badge/Platform-Real%20Digital-red)]([https://redpitaya.com/](https://www.realdigital.org/hardware/rfsoc-4x2))
+[![FPGA](https://img.shields.io/badge/FPGA-Zynq--7010-blue)](https://www.xilinx.com/)
+
+
+## Overview
 Fast sampling, high memory density multichannel arbitrary waveform generator.
 
 ## Features
 
-- Data sampling at 9.8034 GSps
+- Data sampling at 9.8304 GSps
 - 4 independent $2^{18}$ sample $waveforms
 - 3000 time bins with 10 µs resolution
 - Robust clock domain crossing with custom FIFO
