@@ -1,5 +1,26 @@
 # AWG-MultiChannel-RFSoC
 
+Fast sampling, high memory density multichannel arbitrary waveform generator.
+
+## Features
+
+- Data sampling at 9.8034 GSps
+- 4 independent $2^{18} sample $waveforms
+- 3000 time bins with 10 µs resolution
+- Robust clock domain crossing with custom FIFO
+- AXI GPIO interface for software control
+- Analog output monitoring (DAC)
+- Configurable discriminator pulse width (8-64 ns)
+
+
+## System Architecture
+
+## Input/Output
+
+## Usage
+
+
+
 <table cellspacing="0" cellpadding="10">
   <tr>
     <th align="left">Input</th>
@@ -14,3 +35,5 @@
 ## Board Files
 The board file can be installed from
 https://github.com/RealDigitalOrg/RFSoC4x2-BSP
+
+High 
