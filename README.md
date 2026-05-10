@@ -11,6 +11,6 @@
   </tr>
 </table>
 
-
+## Board Files
 The board file can be installed from
 https://github.com/RealDigitalOrg/RFSoC4x2-BSP
