@@ -1,6 +1,6 @@
 # AWG-MultiChannel-RFSoC
 
-[![Platform](https://img.shields.io/badge/Platform-Real%20Digital%204x2RFSoC-red)]([https://redpitaya.com/](https://www.realdigital.org/hardware/rfsoc-4x2))
+[![Platform](https://img.shields.io/badge/Platform-RealDigital%204x2RFSoC-red)]([https://redpitaya.com/](https://www.realdigital.org/hardware/rfsoc-4x2))
 [![FPGA](https://img.shields.io/badge/FPGA-Zynq--7010-blue)](https://www.xilinx.com/)
 
 
