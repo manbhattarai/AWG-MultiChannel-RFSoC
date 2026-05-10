@@ -5,7 +5,7 @@ Fast sampling, high memory density multichannel arbitrary waveform generator.
 ## Features
 
 - Data sampling at 9.8034 GSps
-- 4 independent $2^{18} sample $waveforms
+- 4 independent $2^{18}$ sample $waveforms
 - 3000 time bins with 10 µs resolution
 - Robust clock domain crossing with custom FIFO
 - AXI GPIO interface for software control
