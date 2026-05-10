@@ -10,3 +10,7 @@
     <td><img src="./assets/arb_RFSoC_output_bkg.png" width="500" alt="Output"></td>
   </tr>
 </table>
+
+
+The board file can be installed from
+https://github.com/RealDigitalOrg/RFSoC4x2-BSP
