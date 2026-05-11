@@ -5,19 +5,21 @@
 
 
 ## Overview
-Fast sampling, high memory density multichannel arbitrary waveform generator.
+High-sampling-rate, high-memory-density, multi-channel arbitrary waveform generator.
 
 ## Features
 
 - Data sampling at 9.8304 GSps
-- 4 independent $2^{18}$-sample waveform.
+- 4 independent $2^{18}$-sample waveforms.
 - Two output channels.
-  - Each channel can output one of the two waveform.
-  - Waveform selection by software (AXI GPIOs) or an external signal.
+  - Each channel can output one of the two waveforms.
+  - Waveform selection via software (AXI GPIOs) or an external signal.
 - 
 
 
 ## System Architecture
+The AWG 
+
 
 ## Input/Output
 
