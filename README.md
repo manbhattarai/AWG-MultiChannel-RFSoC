@@ -20,13 +20,6 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
 ## System Architecture
 The AWG 
 
-
-## Input/Output
-
-## Usage
-
-
-
 <table cellspacing="0" cellpadding="10">
   <tr>
     <th align="left">Input</th>
@@ -37,6 +30,14 @@ The AWG
     <td><img src="./assets/arb_RFSoC_output_bkg.png" width="500" alt="Output"></td>
   </tr>
 </table>
+
+## Input/Output
+
+## Usage
+
+
+
+
 
 ## Board Files
 The board file can be installed from
