@@ -17,7 +17,7 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
 
 
 ## System Architecture
-The AWG 
+
 
 <table cellspacing="0" cellpadding="10">
   <tr>
@@ -52,13 +52,15 @@ The design contains AXI GPIOs that can be accessed by software. A sample C code 
 
 
 ## Usage
-A sample jupyter notebook file is provided. Copy the .ipynb, the LMK and the LMX files, the .hwh file into the same path in the device. Extract the .7z file to unpack the .bit file. Run the notebook from within the Linux of the FPGA.
+A sample jupyter notebook file is provided. 
+1. Copy the .ipynb, the LMK and the LMX files, the .hwh file into the same folder in the device.
+2. Extract the .7z file to obtain the .bit file at the same location.
+3. Run the notebook from within the Linux of the FPGA.
 
 
 ## Modifications
 The project can be built as a Vivado project using the <i>awg_multichannel_rfsoc.tcl</i> and necessary modifications can be made. 
 
-## Board Files
 The board file can be installed from
 https://github.com/RealDigitalOrg/RFSoC4x2-BSP
 
