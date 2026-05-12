@@ -10,10 +10,11 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
 ## Features
 
 - Data sampling at 9.8304 GSps
-- 4 independent $2^{18}$-sample waveforms.
-- Two output channels.
-  - Each channel can output one of the two waveforms.
-  - Waveform selection via software (AXI GPIOs) or an external signal.
+- Two output channels: DAC A (DAC0) and DAC B (DAC2)
+- Four waveforms total, each $2^{18}$ samples
+  - DAC A (DAC0): waveform A or B
+  - DAC B (DAC2): waveform C or D
+  - Waveform selection via software (AXI GPIO) or an external signal.
 
 
 ## System Architecture
@@ -34,10 +35,10 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
 The relevant I/O pins and ports on the board are
 | Name | Pin/Port |  Type | Description |
 | -------- | -------- | -------- | -------- |
-| control_trigger | PMOD0_1 | Input | External trigger signal.  Switches between waveform-A and waveform-B for DAC0 output and between waveform-C and waveform-D fpr DAC2 output. The actual signal is (axi_control || control_trigger)|
-| pmod_out| PMOD0_0  | Output | Outputs control_trigger signal sampled at a 614.4 MHz clock.  |
-| DAC 0| DAC A  | Output | DAC output |
-| DAC 2| DAC B  | Output | DAC output |
+| control_trigger | PMOD0_1 | Input | External waveform-select trigger. Toggles DAC A between A/B and DAC B between C/D. Effective select: (axi_control || control_trigger)|
+| pmod_out| PMOD0_0  | Output | Outputs control_trigger signal sampled on a 614.4 MHz clock.  |
+| DAC 0| DAC A  | Output | AWG output |
+| DAC 2| DAC B  | Output | AWG output |
 
 The design contains AXI GPIOs that can be accessed by software. A sample C code is provided.
 | Name | Memory Address |  Type | Description |
@@ -47,7 +48,7 @@ The design contains AXI GPIOs that can be accessed by software. A sample C code 
 | MAX_POINTS| 0x00_A006_0000  | Output | 32 bit. MAX_POINTS << 4 represnts the maximum number of points to output.  |
 | enable_ch0 | 0x00_A009_0000 | Output | 1 bit. Enables output on DAC A if write_enable is low too. |
 | enable_ch2| 0x00_A00A_0000 | Output | 1 bit. Enables output on DAC B if write_enable is low too. |
-| axi_control| 0x00_A008_0000 | Output | 1 bit. Software trigger signal.  Switches between waveform-A and waveform-B for DAC0 output and between waveform-C and waveform-D for DAC2 output. The actual signal is (axi_control || control_trigger) |
+| axi_control| 0x00_A008_0000 | Output | 1 bit. Software trigger signal.  Switches between waveform-A and waveform-B for DAC0 output and between waveform-C and waveform-D for DAC2 output. The effective select signal is (axi_control || control_trigger) |
 | axi_dma_0| 0x00_A006_0000 | Input | AMD's DMA IP for direct memory access and fast transfer of data from PS to PL.|
 
 
