@@ -55,7 +55,8 @@ The design contains AXI GPIOs that can be accessed by software. A sample C code 
 A sample jupyter notebook file is provided. Copy the .ipynb, the LMK and the LMX files, the .hwh file and the .bit file into the same path in the device, and run the notebook.
 
 
-
+## Modifications
+The project can be built as a Vivado project using the <i>awg_multichannel_rfsoc.tcl</i> and necessary modifications can be made. 
 
 ## Board Files
 The board file can be installed from
