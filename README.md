@@ -35,8 +35,8 @@ The AWG
 The relevant I/O pins and ports on the board are
 | Name | Pin/Port |  Type | Description |
 | -------- | -------- | -------- | -------- |
-| Control_Trigger | PMOD0_1 | Input | External trigger signal.  |
-| pmod_out| PMOD0_0  | Output | Generates a TTL pulse when the threshold condition is met.  |
+| control_trigger | PMOD0_1 | Input | External trigger signal.  Switches between waveform-A and waveform-B for DAC0 output and between waveform-C and waveform-D fpr DAC2 output.|
+| pmod_out| PMOD0_0  | Output | Outputs control_trigger signal sampled at a 614.4 MHz clock.  |
 | DAC 0| DAC A  | Output | DAC output |
 | DAC 2| DAC B  | Output | DAC output |
 
