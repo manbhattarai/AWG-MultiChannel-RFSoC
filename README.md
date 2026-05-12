@@ -5,7 +5,7 @@
 
 
 ## Overview
-High-sampling-rate, high-memory-density, multi-channel arbitrary waveform generator.
+High-sampling-rate, high-memory-density, multi-channel arbitrary waveform generator. Waveforms are transferred from PS to PL via AXI DMA, stored in RAM, and streamed to the on-chip DACs.
 
 ## Features
 
