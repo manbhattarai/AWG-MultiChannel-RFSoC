@@ -35,7 +35,7 @@ The AWG
 The relevant I/O pins and ports on the board are
 | Name | Pin/Port |  Type | Description |
 | -------- | -------- | -------- | -------- |
-| control_trigger | PMOD0_1 | Input | External trigger signal.  Switches between waveform-A and waveform-B for DAC0 output and between waveform-C and waveform-D fpr DAC2 output.|
+| control_trigger | PMOD0_1 | Input | External trigger signal.  Switches between waveform-A and waveform-B for DAC0 output and between waveform-C and waveform-D fpr DAC2 output. The actual signal is (axi_control || control_trigger)|
 | pmod_out| PMOD0_0  | Output | Outputs control_trigger signal sampled at a 614.4 MHz clock.  |
 | DAC 0| DAC A  | Output | DAC output |
 | DAC 2| DAC B  | Output | DAC output |
@@ -43,17 +43,17 @@ The relevant I/O pins and ports on the board are
 The design contains AXI GPIOs that can be accessed by software. A sample C code is provided.
 | Name | Memory Address |  Type | Description |
 | -------- | -------- | -------- | -------- |
-| rst_n | 0x00_A007_0000 | Output |1 bit. Software reset signal. |
+| rst_n | 0x00_A007_0000 | Output |1 bit. Software reset signal. Active negative signal. |
 | write_enable | 0x00_A005_0000  | Output | 1 bit. Enables writing data to RAM bank. Set to 0 to enable output. |
 | MAX_POINTS| 0x00_A006_0000  | Output | 32 bit. MAX_POINTS << 4 represnts the maximum number of points to output.  |
-| enable_ch0 | 0x00_A009_0000 | Output | 1 bit. Read the YAG_trigger signal |
-| enable_ch2| 0x00_A00A_0000 | Output | 1 bit. Read the locked state of the PLL. 1 represents locked, and 0 unlocked. |
-| axi_control| 0x00_A008_0000 | Output | 1 bit. FIFO empty and full signal. Bit 0 represnts if full, and Bit 1 represnets if empty. |
+| enable_ch0 | 0x00_A009_0000 | Output | 1 bit. Enables output on DAC A if write_enable is low too. |
+| enable_ch2| 0x00_A00A_0000 | Output | 1 bit. Enables output on DAC B if write_enable is low too. |
+| axi_control| 0x00_A008_0000 | Output | 1 bit. Software trigger signal.  Switches between waveform-A and waveform-B for DAC0 output and between waveform-C and waveform-D for DAC2 output. The actual signal is (axi_control || control_trigger) |
 | axi_dma_0| 0x00_A006_0000 | Input | AMD's DMA IP for direct memory access and fast transfer of data from PS to PL.|
 
 
 ## Usage
-
+A sample jupyter notebook file is provided. Copy the .ipynb, the LMK and the LMX files, the .hwh file and the .bit file into the same path in the device, and run the notebook.
 
 
 
