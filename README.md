@@ -14,7 +14,6 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
 - Two output channels.
   - Each channel can output one of the two waveforms.
   - Waveform selection via software (AXI GPIOs) or an external signal.
-- 
 
 
 ## System Architecture
