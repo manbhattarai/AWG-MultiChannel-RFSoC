@@ -32,8 +32,8 @@ On the read side, the address counter increments with a clock signal clk0 (16 ti
     <th align="left">Output</th>
   </tr>
   <tr>
-    <td><img src="./assets/arb_RFSoC_input_bkg.png" width="500" alt="Input"></td>
-    <td><img src="./assets/arb_RFSoC_output_bkg.png" width="500" alt="Output"></td>
+    <td><img src="./assets/arb_RFSoC_input_bkg.png" width="500" alt="Write"></td>
+    <td><img src="./assets/arb_RFSoC_output_bkg.png" width="500" alt="Read"></td>
   </tr>
 </table>
 
