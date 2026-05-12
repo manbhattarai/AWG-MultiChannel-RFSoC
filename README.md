@@ -31,8 +31,6 @@ The AWG
   </tr>
 </table>
 
-## Input/Output
-
 ## Input/Output 
 The relevant I/O pins and ports on the board are
 | Name | Pin/Port |  Type | Description |
