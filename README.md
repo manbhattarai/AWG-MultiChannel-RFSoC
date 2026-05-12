@@ -20,7 +20,7 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
 ## System Architecture
 The implementation is summarized with the help of the following diagrams. It is separated into the waveform-write and the waveform-read blocks.
 
-The sample comprising the waveforms A,B,C, and D are fed into the PL via an AXI-DMA as in the sequesce outlined in the diagram. The data sequence then passed through a datasorter module, which sorts and write the data onto the RAM memory block in the format depicted in the diagram. In case of the memory block RAM[0] and RAM[1], the first $2^{14}$ memory address contains sample points of waveform-A, and the rest $2^{14}$ address (from $2^{14}$ to $2^{15}$) contain samples from waveform-B. 
+The sample comprising the waveforms A,B,C, and D are fed into the PL via an AXI-DMA as in the sequesce outlined in the diagram. The data sequence then passed through a datasorter module, which sorts and write the data onto the RAM memory block in the format depicted in the diagram. During the write process, the `write_enable` signal is held high. In case of the memory block RAM[0] and RAM[1], the first $2^{14}$ memory address contains sample points of waveform-A, and the rest $2^{14}$ address (from $2^{14}$ to $2^{15}$) contain samples from waveform-B. 
 
 <table cellspacing="0" cellpadding="10">
   <tr>
