@@ -39,21 +39,19 @@ The relevant I/O pins and ports on the board are
 | -------- | -------- | -------- | -------- |
 | Control_Trigger | PMOD0_1 | Input | External trigger signal.  |
 | pmod_out| PMOD0_0  | Output | Generates a TTL pulse when the threshold condition is met.  |
-| DAC| DAC A  | Output | Outputs the YAG_Trigger singal. Only meant for diagnostics. |
-| DAC | DAC B | Output | PMT pulse signal. Typically a negative pulse. |
+| DAC 0| DAC A  | Output | DAC output |
+| DAC 2| DAC B  | Output | DAC output |
 
 The design contains AXI GPIOs that can be accessed by software. A sample C code is provided.
 | Name | Memory Address |  Type | Description |
 | -------- | -------- | -------- | -------- |
-| axi_gpio_0 | 0x4120_0000 | Input |12 bit. Memory address to read the content of the counter RAM |
-| axi_gpio_1 | 0x4121_0000  | Output | 14 bit. Threshold value (unsigned input, interpreted as 14-bit 2's complement by hardware). Values 0-8191 represent positive thresholds, values 8192-16383 represent negative thresholds. Threshold is met when \|signal\| > \|threshold\| |
-| axi_gpio_2| 0x4122_0000  | Input | 8 bit. Count value at the memory address specified by axi_gpio_0  |
-| axi_gpio_3 | 0x4123_0000 | Output | 1 bit. Read the YAG_trigger signal |
-| pll_locked_out| 0x4124_0000 | Output | 1 bit. Read the locked state of the PLL. 1 represents locked, and 0 unlocked. |
-| empty_full| 0x4125_0000 | Output | 2 bit. FIFO empty and full signal. Bit 0 represnts if full, and Bit 1 represnets if empty. |
-| axi_gpio_4| 0x4126_0000 | Output | 1 bit. TTL signal that goes high when the signal meets the threshold condition. |
-| disc_width| 0x4127_0000 | Input |2 bit. Discriminator pulse width setting (see table below)   |
-
+| rst_n | 0x00_A007_0000 | Output |1 bit. Software reset signal. |
+| write_enable | 0x00_A005_0000  | Output | 1 bit. Enables writing data to RAM bank. Set to 0 to enable output. |
+| MAX_POINTS| 0x00_A006_0000  | Output | 32 bit. MAX_POINTS << 4 represnts the maximum number of points to output.  |
+| enable_ch0 | 0x00_A009_0000 | Output | 1 bit. Read the YAG_trigger signal |
+| enable_ch2| 0x00_A00A_0000 | Output | 1 bit. Read the locked state of the PLL. 1 represents locked, and 0 unlocked. |
+| axi_control| 0x00_A008_0000 | Output | 1 bit. FIFO empty and full signal. Bit 0 represnts if full, and Bit 1 represnets if empty. |
+| axi_dma_0| 0x00_A006_0000 | Input | AMD's DMA IP for direct memory access and fast transfer of data from PS to PL.|
 
 
 ## Usage
