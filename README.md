@@ -43,7 +43,7 @@ The design contains AXI GPIOs that can be accessed by software. A sample C code 
 | Name | Memory Address |  Type | Description |
 | -------- | -------- | -------- | -------- |
 | rst_n | 0x00_A007_0000 | Output |1 bit. Software reset signal. Active negative signal. |
-| write_enable | 0x00_A005_0000  | Output | 1 bit. Enables writing data to RAM bank. Set to 0 to enable output. |
+| write_enable | 0x00_A005_0000  | Output | 1 bit. Enables writing data to RAM bank. Set to 0 to enable output; set enable_ch0 and enambe_ch2 accordingly. |
 | MAX_POINTS| 0x00_A006_0000  | Output | 32 bit. MAX_POINTS << 4 represnts the maximum number of points to output.  |
 | enable_ch0 | 0x00_A009_0000 | Output | 1 bit. Enables output on DAC A if write_enable is low too. |
 | enable_ch2| 0x00_A00A_0000 | Output | 1 bit. Enables output on DAC B if write_enable is low too. |
