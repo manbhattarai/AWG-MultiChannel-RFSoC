@@ -15,6 +15,7 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
   - DAC A (DAC0): waveform A or B
   - DAC B (DAC2): waveform C or D
   - Waveform selection via software (AXI GPIO) or an external signal.
+- Sample loading within 5-7 ms.
 
 
 ## System Architecture
