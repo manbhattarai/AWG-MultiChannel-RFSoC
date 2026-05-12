@@ -40,6 +40,7 @@ At each rising edge of clk0, the 16 samples - 8 samples on RAM[0], and 8 samples
     <td><img src="./assets/arb_RFSoC_output_bkg.png" width="500" alt="Read"></td>
   </tr>
 </table>
+Internally, the design is pipelined to meet timing requirements for performance of the FPGA logic at an incredible clock rate of 614.4 MHz. There is no particular reason, for such arrangement of the memory blocks, other than historical. This design is an extension of earlier design of an AWG that outputs only one waveform over one DAC channel.
 
 ## Input/Output 
 The relevant I/O pins and ports on the board are
