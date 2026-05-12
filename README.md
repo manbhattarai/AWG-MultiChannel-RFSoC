@@ -67,7 +67,7 @@ The design contains AXI GPIOs that can be accessed by software. A sample C code 
 A sample jupyter notebook file is provided. 
 1. Copy the .ipynb, the LMK and the LMX files, the .hwh file into the same folder in the device.
 2. Extract the .7z file to obtain the .bit file at the same location.
-3. Run the notebook from within the Linux of the FPGA.
+3. Run the notebook from within the Linux OS on the FPGA.
 
 
 ## Modifications
