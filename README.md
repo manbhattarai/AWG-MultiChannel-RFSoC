@@ -20,10 +20,13 @@ High-sampling-rate, high-memory-density, multi-channel arbitrary waveform genera
 ## System Architecture
 The implementation is summarized with the help of the following diagrams. It is separated into the waveform-write and the waveform-read blocks.
 
-### Waveform write path
-The sample comprising the waveforms A,B,C, and D are fed into the PL via an AXI-DMA as in the sequesce outlined in the diagram. The data sequence then passed through a datasorter module, which sorts and writes the data onto the RAM memory block in the format depicted in the diagram. During the write process, the `write_enable` signal is held high. In case of the memory block RAM[0] and RAM[1], the first $2^{14}$ memory address contain sample points of waveform-A, and the rest $2^{14}$ address (from $2^{14}$ to $2^{15}$) contain samples from waveform-B. A similar arrangement for waveform-C and -D on RAM blocks RAM[2], and RAM[3].
+### Waveform write block
+The sample comprising the waveforms A,B,C, and D are fed into the PL via an AXI-DMA with samples in the sequence shown in the diagram. The stream then passes through a Data Sorter module, which reorders the incoming samples and writes them into the RAM banks using the memory layout depicted in the diagram. During this process, the `write_enable` signal is held high. 
+For the memory block RAM[0] and RAM[1], the first $2^{14}$ memory address contain waveform-A samples, and the rest $2^{14}$ address (from $2^{14}$ to $2^{15}$) contain waveform-B samples. A similar arrangement is used for waveform-C and -D on RAM blocks RAM[2], and RAM[3].
 
-On the read side, the address counter increments with a clock signal clk0 for RAM[0],and RAM[1]) (and with clk2 for RAM[2], and RAM[3]). Both clocks clk0 and clk2 operate at 614.4 MHz -  16 times slower than the DAC sampling rate. At each rising edge of clk0, the 16 samples - 8 samples on RAM[0], and 8 samples on RAM[1] - are concatenated and sent to the DAC IP to be outputted from DAC0. When the waveform select signal : (`control_trigger` || `axi_control`) is high, an offset of $2^{14}$ is added to the address counter, so that it begins outputting waveform-B, on the same dac channel. A similar behavior is implemented for the output of waveform-C and waveform-D at DAC2.
+### Waveform read block
+On the read side, the address counter increments with a clock signal clk0 for RAM[0],and RAM[1]) and with clk2 for RAM[2], and RAM[3]). Both clocks operate at 614.4 MHz -  16x slower than the DAC sampling rate. 
+At each rising edge of clk0, the 16 samples - 8 samples on RAM[0], and 8 samples on RAM[1] at the same address counter - are concatenated and sent to the DAC IP for output on DAC0 (DAC A). When the waveform select signal : (`control_trigger` || `axi_control`) is high, an offset of $2^{14}$ is added to the base address, so that waveform-B is output on the same dac channel. A similar behavior is implemented to output waveform-C or waveform-D at DAC2.
 
 
 
